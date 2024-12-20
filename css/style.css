@@ -1,0 +1,171 @@
+/* Import Google font - Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #e0e3eb;
+}
+
+.container {
+    position: relative;
+    max-width: 300px;
+    width: 100%;
+    border-radius: 12px;
+    padding: 10px 20px 20px;
+    background: #fff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+}
+
+.display {
+    height: 80px;
+    width: 100%;
+    outline: none;
+    border: none;
+    text-align: right;
+    margin-bottom: 10px;
+    font-size: 25px;
+    color: #000e1a;
+    pointer-events: none;
+}
+
+.buttons {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.buttons button {
+    padding: 10px;
+    width: 60px;
+    height: 60px;
+    border-radius: 40px;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #eee;
+}
+
+.buttons button:hover {
+    background-color: #2f9fff;
+    color: #eee;
+}
+
+.buttons button:active {
+    transform: scale(0.99);
+}
+
+.operator {
+    color: #2f9fff;
+}
+
+.buttons:before {
+    content: "";
+    background: linear-gradient(90deg,
+        #ff2400,
+        #e81d1d,
+        #e8b71d,
+        #e3e81d,
+        #1de840,
+        #1ddde8,
+        #2b1de8,
+        #dd00f3,
+        #dd00f3,
+
+        #ff2400,
+        #e81d1d,
+        #e8b71d,
+        #e3e81d,
+        #1de840,
+        #1ddde8,
+        #2b1de8,
+        #dd00f3,
+        #dd00f3);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 200%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(50% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+  }
+
+  .buttons:hover:before {
+    opacity: 1;
+  }
+
+  .buttons:hover.buttons:after {
+    opacity: 1;
+  }
+
+  .buttons:after {
+    content: "";
+    background: linear-gradient(90deg,
+        #dd00f3,
+        #dd00f3,
+        #2b1de8,
+        #1ddde8,
+        #1de840,
+        #e3e81d,
+        #e8b71d,
+        #e81d1d,
+        #ff2400,
+
+        #dd00f3,
+        #dd00f3,
+        #2b1de8,
+        #1ddde8,
+        #1de840,
+        #e3e81d,
+        #e8b71d,
+        #e81d1d,
+        #ff2400);
+    position: absolute;
+    top: calc(50% - 2px);
+    left: -2px;
+    background-size: 200%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(50% + 4px);
+    animation: glowing-reverse 20s linear infinite;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+
+  @keyframes glowing {
+    0% {
+      background-position: 0 0;
+    }
+
+    100% {
+      background-position: 400% 0;
+    }
+  }
+
+  @keyframes glowing-reverse {
+    0% {
+      background-position: 400% 0;
+    }
+
+    100% {
+      background-position: 0 0;
+    }
+  }
